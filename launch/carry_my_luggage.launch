@@ -1,0 +1,8 @@
+<launch>
+    <node name="stt" pkg="theta_speech" type="stt_node.py" />
+    <node name="tts" pkg="theta_speech" type="tts_node.py" />
+	<include file="$(find openni_launch)/launch/openni.launch" />
+    <node name="openni_tracker" pkg="openni_tracker" type="openni_tracker" />
+    <node name="hotword" pkg="theta_speech" type="hotword_node.py" />
+    <node name="carry_task" pkg="theta_follow_me_task" type="follow_me_task.py" />
+</launch>
